@@ -137,7 +137,7 @@ unzip
 yum groupinstall 'Development tools'
 ```
 
-####4.2 配置免密登陆
+#### 4.2 配置免密登陆
 
 ```shell
 # 在自己电脑上 生成本地 秘钥对
