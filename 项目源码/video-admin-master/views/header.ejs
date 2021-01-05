@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>wclimb管理后台</title>
+	<link rel="icon" href="http://www.wclimb.site/images/avatar.png">
+	<link href="https://unpkg.com/semantic-ui@2.3.3/dist/semantic.min.css" rel="stylesheet">
+	<script src="https://unpkg.com/jquery@3.3.1/dist/jquery.min.js"></script>
+	<script src="https://unpkg.com/semantic-ui@2.3.3/dist/semantic.min.js"></script>
+	<style>
+		img{
+			width: 50px;
+		}
+		.right .item {
+			margin: 0 -0.5em!important;
+		}
+		th,td{
+			text-align: center!important;
+		}
+		#page{
+			display: table;
+			margin: 20px auto;
+		}
+		#page a{
+			padding: 5px 10px;
+			border:1px solid #ddd;
+			color: #428bca;
+			margin: 0 2px;
+			border-radius: 4px;
+		}
+		#page a:hover{
+			background: #428bca;
+			color: #fff;
+			
+		}
+		#page a.active{
+			background: #428bca;
+			color: #fff;
+		}
+		#page span{
+			margin-left: 5px;
+		}
+	</style>
+</head>
+<body>
+	<div class="ui inverted segment"  style="margin-top: 0;">
+	    <div class="ui inverted secondary menu">
+	    	<a class="item"  href="/">Home</a>
+	    	<a class="item" href="/upload">上传数据</a>
+	    	<a class="item" href="/adminUser?page=1">后台管理员列表</a>
+	    	<a class="item" href="/mobileUser?page=1">手机用户列表</a>
+	    	<a class="item" href="/comment?page=1">用户评论</a>
+	    	<a class="item" href="/like?page=1">喜欢/不喜欢</a>
+	    	<a target="__blank" href="https://github.com/wclimb" class="item">GitHub</a>
+		  	<div class="right menu">
+				<div class="ui item dropdown">
+			    	<div class="text">
+			    		<% if(session.user){ %>
+			    	  	<img class="ui avatar image" src="http://www.wclimb.site/images/avatar.png">
+			    	  	<%= session.user %>
+			    	   	<% } %>
+			    	</div>
+			    	<i class="dropdown icon"></i>
+				    <div class="menu">
+				    	<div class="header">
+						    登出操作
+						    </div>
+						    <% if(session.user){ %>
+				    	  <a class="item" href="/signout">
+						    	登出
+						    </a>
+				    	   <% } %>
+				    	</div>
+				   </div>
+		  		</div>
+	  		</div>
+		</div>
+	</div>
